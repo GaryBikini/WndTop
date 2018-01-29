@@ -1,0 +1,57 @@
+﻿<Window x:Class="WndTop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WndTop"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:res="clr-namespace:WndTop.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static res:Resources.title}" 
+        Height="186" Width="300" 
+        WindowStartupLocation="CenterScreen"
+                   
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+                   
+        Topmost="True" 
+        Icon="logo.ico" ResizeMode="CanMinimize"
+        >
+    <Grid>
+        <ToggleButton x:Name="btnTop"
+            IsChecked="False"
+            Style="{StaticResource MyToggle}"    
+            Margin="60,25,0,0" Checked="btnTop_Checked"
+            ToolTip="{x:Static res:Resources.btnTop}" VerticalAlignment="Top" HorizontalAlignment="Left" 
+             >
+            <materialDesign:PackIcon Kind="Pin" Height="21" Width="21" RenderTransformOrigin=".5,.5">
+                <materialDesign:PackIcon.RenderTransform>
+                    <RotateTransform Angle="45"/>
+                </materialDesign:PackIcon.RenderTransform>
+            </materialDesign:PackIcon>
+        </ToggleButton>
+
+        <ToggleButton x:Name="btnRelease"
+            IsChecked="False"
+            Style="{StaticResource MyToggle}"    
+            Margin="0,25,60,0" Checked="btnRelease_Checked"
+            ToolTip="{x:Static res:Resources.btnRelease}" VerticalAlignment="Top" Width="40" HorizontalAlignment="Right" 
+             >
+            <materialDesign:PackIcon Kind="Pin" Height="21" Width="21" RenderTransformOrigin=".5,.5">
+                <materialDesign:PackIcon.RenderTransform>
+                    <RotateTransform Angle="90"/>
+                </materialDesign:PackIcon.RenderTransform>
+            </materialDesign:PackIcon>
+        </ToggleButton>
+
+        <materialDesign:Card Padding="10" Margin="10,0,10,10" VerticalAlignment="Bottom" >
+            <TextBlock TextWrapping="Wrap" FontSize="12" Text="{x:Static res:Resources.txtInstruct}"/>
+        </materialDesign:Card>
+
+    </Grid>
+</Window>
