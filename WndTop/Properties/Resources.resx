@@ -124,9 +124,9 @@
     <value>On Top</value>
   </data>
   <data name="title" xml:space="preserve">
-    <value>Window Pin</value>
+    <value>Windows Top</value>
   </data>
   <data name="txtInstruct" xml:space="preserve">
-    <value>Choose the function button, then click the target window.</value>
+    <value>Choose the button above, then click the target window.</value>
   </data>
 </root>

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WndTop", "WndTop\WndTop.csproj", "{F011A787-D3DA-4176-A754-4F7100B99F25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WndTop.Setup", "WndTop.Setup\WndTop.Setup.csproj", "{491A4CAD-1A4A-4AA8-8CDC-7902746414D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F011A787-D3DA-4176-A754-4F7100B99F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F011A787-D3DA-4176-A754-4F7100B99F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F011A787-D3DA-4176-A754-4F7100B99F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{491A4CAD-1A4A-4AA8-8CDC-7902746414D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{491A4CAD-1A4A-4AA8-8CDC-7902746414D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{491A4CAD-1A4A-4AA8-8CDC-7902746414D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{491A4CAD-1A4A-4AA8-8CDC-7902746414D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

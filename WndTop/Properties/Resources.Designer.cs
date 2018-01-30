@@ -79,7 +79,7 @@ namespace WndTop.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Window Pin.
+        ///   Looks up a localized string similar to Windows Top.
         /// </summary>
         public static string title {
             get {
@@ -88,7 +88,7 @@ namespace WndTop.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose the function button, then click the target window..
+        ///   Looks up a localized string similar to Choose the button above, then click the target window..
         /// </summary>
         public static string txtInstruct {
             get {
