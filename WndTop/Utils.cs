@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 
 namespace WndTop
@@ -27,8 +28,15 @@ namespace WndTop
 
 
 
+        public static void SetOnTop(IntPtr winHandle)
+        {
+            SetWindowPos(winHandle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+        }
 
-
+        public static void CancelOnTop(IntPtr winHandle)
+        {
+            SetWindowPos(winHandle, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+        }
 
 
         private const int WH_MOUSE_LL = 14;
@@ -125,13 +133,18 @@ namespace WndTop
 
                 IntPtr winHandle = WindowFromPoint(cusorPoint);
 
+                Debug.WriteLine("handle: " + winHandle.ToString("X"));
+
                 // Get the final parent handle of the window
                 while (true)
                 {
                     IntPtr temp = GetParent(winHandle);
+                    Debug.WriteLine("parent handle: " + temp.ToString("X"));
                     if (temp.Equals(IntPtr.Zero))
                         break;
                     winHandle = temp;
+                    Debug.WriteLine("handle: " + winHandle.ToString("X"));
+
                 }
                 //IntPtr winHandle = GetActiveWindow();
 
@@ -147,14 +160,12 @@ namespace WndTop
 
                         IntPtr hwndCur = curProcess.MainWindowHandle;
 
-                        //Debug.WriteLine("\n周齐飞cur: {0} click: {1}", hwndCur.ToString("X"), winHandle.ToString("X"));
-
-
                         if (mainWindow.btnTop.IsChecked == true)
                         {
                             if (hwndCur != winHandle)
                             {
-                                SetWindowPos(winHandle, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
+                                Debug.WriteLine("cur handle: " + winHandle.ToString("X"));
+                                SetOnTop(winHandle);
                             }
                             mainWindow.btnTop.IsChecked = false;
                         }
@@ -163,7 +174,7 @@ namespace WndTop
                         {
                             if (hwndCur != winHandle)
                             {
-                                SetWindowPos(winHandle, HWND_NOTOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+                                CancelOnTop(winHandle);
                             }
                             mainWindow.btnRelease.IsChecked = false;
                         }
@@ -205,6 +216,36 @@ namespace WndTop
                         GetModuleHandle(curModule.ModuleName), 0);
                 }
             }
+        }
+    }
+
+    class OnTop
+    {
+        private static Timer timer;
+        private static IntPtr intPtr;
+
+        public static void Run(int interval)
+        {
+            timer = new Timer(interval);
+
+            using (Process curProcess = Process.GetCurrentProcess())
+            {
+                using (ProcessModule curModule = curProcess.MainModule)
+                {
+                    //IntPtr hwndCur = GetModuleHandle(curModule.ModuleName);
+
+                    intPtr = curProcess.MainWindowHandle;
+
+                    timer.Elapsed += timer_Elapsed;
+                    timer.Start();
+                }
+            }
+
+        }
+
+        private static void timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Utils.SetOnTop(intPtr);
         }
     }
 }

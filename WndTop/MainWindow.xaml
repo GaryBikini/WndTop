@@ -19,8 +19,8 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
                    
-        Topmost="True" 
-        Icon="logo.ico" ResizeMode="CanMinimize"
+        Topmost="False" 
+        Icon="logo.ico" ResizeMode="CanMinimize" Loaded="Window_Loaded"
         >
     <Grid>
         <ToggleButton x:Name="btnTop"
