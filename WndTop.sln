@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WndTop", "WndTop\WndTop.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WndTop.Setup", "WndTop.Setup\WndTop.Setup.csproj", "{491A4CAD-1A4A-4AA8-8CDC-7902746414D6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9CBFF8D0-189D-4137-9B59-BB7F45B04C44}"
+	ProjectSection(SolutionItems) = preProject
+		Screenshots\functions.gif = Screenshots\functions.gif
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
