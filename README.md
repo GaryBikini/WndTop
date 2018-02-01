@@ -8,4 +8,4 @@ WndTop is a tool that makes a window always on the top.
 
 ### Demonstrate
 
-![](https://github.com/GaryBikini/WndTop/blob/master/Screenshots/functions.gif)
+!["Operations gif"](https://github.com/GaryBikini/WndTop/blob/master/Screenshots/functions.gif)
