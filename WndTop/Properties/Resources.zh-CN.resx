@@ -124,7 +124,7 @@
     <value>置顶</value>
   </data>
   <data name="title" xml:space="preserve">
-    <value>窗体图钉</value>
+    <value>Windows Top</value>
   </data>
   <data name="txtInstruct" xml:space="preserve">
     <value>选中所要的功能，然后点击目标窗体。</value>
